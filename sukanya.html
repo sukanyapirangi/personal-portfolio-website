@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Materialize - Compiled and minified CSS-->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <!-- Font Awesome Icon - CSS-->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  
+  <title>Pirangi Sukanya | Software Developer</title>
+
+  <!-- Open Graph-->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pirangi Sukanya | Software Developer" />
+  <meta property="og:description" content="Software Developer" />
+  <meta name="author" content="Pirangi Sukanya" />
+  <meta name="description" content="Software Developer with a passion for development and machine learning." />
+  <meta name="robots" content="index, follow" />
+
+  <style>
+    /* Custom Styles */
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .side-nav.fixed {
+      width: 240px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.16);
+    }
+
+    .side-nav.fixed li.logo {
+      text-align: center;
+      margin-top: 32px;
+      margin-bottom: 80px;
+    }
+
+    .side-nav.fixed li.logo a {
+      padding: 0;
+    }
+
+    .side-nav.fixed li.bold a {
+      font-weight: 400;
+      color: rgba(0,0,0,0.87);
+      font-size: 14px;
+      line-height: 3;
+      padding: 0 32px;
+    }
+
+    .side-nav.fixed li.bold a:hover {
+      background-color: #ddd;
+    }
+
+    .side-nav.fixed li.bold a i {
+      color: rgba(0,0,0,0.54);
+      margin-right: 32px;
+    }
+
+    main {
+      padding-left: 240px;
+    }
+
+    @media only screen and (max-width: 992px) {
+      main {
+        padding-left: 0;
+      }
+    }
+
+    .full-height {
+      height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+
+    .caption h2 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    .caption h5 {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .teal {
+      color: #00796b !important;
+    }
+
+    .teal-text {
+      color: #00796b !important;
+    }
+
+    .social {
+      margin: 30px 0;
+    }
+
+    .icon-btn {
+      width: 50px;
+      height: 50px;
+      border: 0;
+      color: #fff;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 50px;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+    }
+
+    .linkedin { background: #0e76a8; }
+    .github { background: #333; }
+
+    .icon-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .readme, .contactme {
+      display: inline-block;
+      padding: 12px 30px;
+      margin: 0 10px;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .readme {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: 2px solid white;
+    }
+
+    .contactme {
+      background: #00796b;
+      color: white;
+    }
+
+    .readme:hover, .contactme:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .page-title {
+      text-align: center;
+      padding: 20px 0;
+      margin: 0;
+      background: #00796b;
+      color: white;
+    }
+
+    .card {
+      margin: 30px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-content {
+      padding: 30px;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #00796b;
+    }
+
+    .card-action {
+      background: #f5f5f5;
+      padding: 15px 30px;
+      font-style: italic;
+      color: #666;
+    }
+
+    .flow-text {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .typing {
+      border-right: 2px solid #fff;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { border-color: transparent; }
+      51%, 100% { border-color: #fff; }
+    }
+
+    .hide-on-small-only {
+      display: block;
+    }
+
+    .hide-on-large {
+      display: none;
+    }
+
+    @media only screen and (max-width: 992px) {
+      .hide-on-small-only {
+        display: none;
+      }
+      .hide-on-large {
+        display: block;
+      }
+    }
+
+    .button-collapse {
+      color: #00796b;
+      font-size: 24px;
+      padding: 15px;
+    }
+
+    .name-title {
+      padding: 15px;
+    }
+
+    #name {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Menu-->
+  <!-- Nav class 1 -->
+  <nav class="hide-on-small-only">
+    <ul class="side-nav fixed section table-of-contents">
+
+      <li class="logo">
+        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
+          class="brand-logo grey-blue-text">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='90' fill='%2300796b'/%3E%3Ctext x='100' y='110' font-family='Arial' font-size='60' fill='white' text-anchor='middle'%3EPS%3C/text%3E%3C/svg%3E" class="circle img-responsive profile-pic" alt="avatar">
+        </a>
+      </li>
+
+      <li class="bold">
+        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
+            class="fa fa-user"></i><span>About</span></a>
+      </li>
+
+      <li class="bold">
+        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
+            class="fa fa-code"></i><span>Projects</span></a>
+      </li>
+
+      <li class="bold">
+        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
+            class="fa fa-cogs"></i><span>Skills</span></a>
+      </li>
+      
+      <li class="bold">
+        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
+            class="fa fa-graduation-cap"></i><span>Education</span></a>
+      </li>
+
+      <li class="bold">
+        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
+            class="fa fa-envelope"></i><span>Contact</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Nav class 2 -->
+  <nav class="hide-on-large only trigger z-depth-1">
+    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
+      class="button-collapse"><i class="fa fa-bars"></i></a>
+    <div class="name-title">
+      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Pirangi
+        Sukanya</a><span class="black-text">Software Developer</span>
+    </div>
+  </nav>
+
+  <!-- Nav class 3 -->
+  <nav class="hide-on-large only">
+    <ul id="slide-out" class="side-nav">
+      <li class="bold">
+        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
+            class="fa fa-user"></i><span>About</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
+            class="fa fa-code"></i><span>Projects</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
+            class="fa fa-cogs"></i><span>Skills</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
+            class="fa fa-graduation-cap"></i><span>Education</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
+            class="fa fa-envelope"></i><span>Contact</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content-->
+  <main>
+    <!-- First Section: Heading lines and image -->
+    <section id="intro" class="section scrollspy full-height">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="col-md-9">
+          <div class="content section-padding valign">
+            <div class="caption">
+              <h2>Hi, I'm <span class="teal">Pirangi Sukanya.</span></h2>
+              <h5>A <span class="typing">Software Developer</span></h5>
+              <h5>Passionate about creating innovative solutions and exploring the world of technology.</h5>
+            </div>
+            <div class="social">
+              <a href="https://linkedin.com/in/pirangi-sukanya" target="_blank">
+                <button class="icon-btn linkedin">
+                  <i class="fa fa-linkedin"></i>
+                </button>
+              </a>
+              <a href="https://github.com/pirangisukanya" target="_blank">
+                <button class="icon-btn github">
+                  <i class="fa fa-github"></i>
+                </button>
+              </a>
+            </div>
+            <div class='buttons'>
+              <a href="#about" class="readme">Read More</a>
+              <a href="#contact" class="contactme">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Second Section: About -->
+    <section id="about" class="section scrollspy">
+      <h3 class="page-title white-text teal">About</h3>
+      <div class="container flow-text">
+        <p>
+          I am a Computer Science graduate from Vishwa Vishwani Institute of Systems and Management, affiliated to Osmania University. I am passionate about software development and enjoy solving complex problems through code.
+        </p>
+        <p>
+          As a fresher in the field, I am eager to apply my academic knowledge to real-world projects and contribute to innovative solutions. I have a strong foundation in programming languages and frameworks, with particular interest in web development and machine learning.
+        </p>
+        <p>
+          <ul>
+            <li><b>Languages:</b> Python, Java, JavaScript, HTML/CSS, C++</li>
+            <li><b>Databases:</b> MySQL, MongoDB</li>
+            <li><b>Frameworks:</b> Django, Flask, React, Bootstrap</li>
+            <li><b>Tools & Technologies:</b> Git, VS Code, Jupyter Notebook</li>
+            <li><b>Specialties:</b> Machine Learning, Web Development, Data Analysis</li>
+          </ul>
+        </p>
+        <p>
+          I am looking for opportunities to grow as a software developer and contribute to meaningful projects that make a difference. My goal is to continuously learn new technologies and build solutions that solve real-world problems.
+        </p>
+      </div>
+    </section>
+
+    <!-- Third Section: Projects -->
+    <section id="projects" class="section scrollspy">
+      <h3 class="page-title white-text teal">Projects</h3>
+      <div class="container">
+
+        <!-- Project 1 -->
+        <div class="card">
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12">
+                <p>
+                  <span class="card-title teal-text">Jetay Travel Planner</span>
+                </p>
+              </div>
+            </div>
+            <div class="role brown-text text-darken-2">Full Stack Web Application</div>
+            <ul>
+              <li>
+                Developed a comprehensive travel planning web application to help users plan and organize their trips efficiently.
+              </li>
+              <li>
+                Implemented features for destination research, itinerary creation, budget tracking, and travel recommendations.
+              </li>
+              <li>
+                Created an intuitive user interface with responsive design for both desktop and mobile users.
+              </li>
+              <li>
+                Integrated APIs for weather information, maps, and local attractions to enhance user experience.
+              </li>
+              <li>
+                <b>Technologies Used:</b> HTML, CSS, JavaScript, Python, Django/Flask, MySQL
+              </li>
+            </ul>
+          </div>
+          <div class="card-action">
+            <span>Academic Project | 2024</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card">
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12">
+                <p>
+                  <span class="card-title teal-text">Rainfall Estimation using Machine Learning</span>
+                </p>
+              </div>
+            </div>
+            <div class="role brown-text text-darken-2">Machine Learning Project</div>
+            <ul>
+              <li>
+                Developed a machine learning model to predict rainfall patterns using historical weather data and meteorological parameters.
+              </li>
+              <li>
+                Implemented various ML algorithms including Linear Regression, Random Forest, and Neural Networks to compare accuracy.
+              </li>
+              <li>
+                Performed extensive data preprocessing, feature engineering, and model optimization to improve prediction accuracy.
+              </li>
+              <li>
+                Created data visualizations to analyze rainfall patterns and model performance metrics.
+              </li>
+              <li>
+                Achieved significant accuracy in rainfall prediction which can be valuable for agricultural planning and weather forecasting.
+              </li>
+              <li>
+                <b>Technologies Used:</b> Python, Pandas, NumPy, Scikit-learn, Matplotlib, Jupyter Notebook
+              </li>
+            </ul>
+          </div>
+          <div class="card-action">
+            <span>Academic Project | 2024</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Fourth Section: Skills -->
+    <section id="skills" class="section scrollspy">
+      <h3 class="page-title white-text teal">Skills</h3>
+      <div class="container">
+        <div class="card">
+          <div class="card-content">
+            <h4 class="brown-text text-darken-2">Programming Languages</h4>
+            <div class="row text-center">
+              <div class="col s4 m2">
+                <i class="fa fa-code" style="font-size: 3rem; color: #00796b;"></i>
+                <p>Python</p>
+              </div>
+              <div class="col s4 m2">
+                <i class="fa fa-coffee" style="font-size: 3rem; color: #00796b;"></i>
+                <p>Java</p>
+              </div>
+              <div class="col s4 m2">
+                <i class="fa fa-code" style="font-size: 3rem; color: #00796b;"></i>
+                <p>JavaScript</p>
+              </div>
+              <div class="col s4 m2">
+                <i class="fa fa-code" style="font-size: 3rem; color: #00796b;"></i>
+                <p>C++</p>
+              </div>
+              <div class="col s4 m2">
+                <i class="fa fa-html5" style="font-size: 3rem; color: #00796b;"></i>
+                <p>HTML/CSS</p>
+              </div>
+              <div class="col s4 m2">
+                <i class="fa fa-database" style="font-size: 3rem; color: #00796b;"></i>
+                <p>SQL</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="card">
+          <div class="card-content">
+            <h4 class="brown-text text-darken-2">Specializations</h4>
+            <div class="row text-center">
+              <div class="col s6 m4">
+                <i class="fa fa-globe" style="font-size: 3rem; color: #00796b;"></i>
+                <p>Web Development</p>
+              </div>
+              <div class="col s6 m4">
+                <i class="fa fa-brain" style="font-size: 3rem; color: #00796b;"></i>
+                <p>Machine Learning</p>
+              </div>
+              <div class="col s6 m4">
+                <i class="fa fa-chart-bar" style="font-size: 3rem; color: #00796b;"></i>
+                <p>JavaScript</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fifth Section: Education -->
+    <section id="education" class="section scrollspy">
+      <h3 class="page-title white-text teal">Education</h3>
+      <div class="container">
+        <div class="card">
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12">
+                <p>
+                  <span class="card-title">Bachelor of Computer Science (BS-MS) </span>
+                </p>
+              </div>
+            </div>
+            <div class="role brown-text text-darken-2">Vishwa Vishwani Institute of Systems and Management</div>
+            <p>Affiliated to Osmania University</p>
+            <ul>
+              <li>
+                Completed comprehensive coursework in Computer Science fundamentals including Data Structures, Algorithms, Database Management Systems, and Software Engineering.
+              </li>
+              <li>
+                Gained hands-on experience in various programming languages and development frameworks.
+              </li>
+              <li>
+                Participated in coding competitions and technical workshops to enhance practical skills.
+              </li>
+              <li>
+                Completed projects in web development, machine learning, and database management.
+              </li>
+            </ul>
+          </div>
+          <div class="card-action">
+            <span>2020 - 2024 | Hyderabad, India</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sixth Section: Contact -->
+    <section id="contact" class="section scrollspy">
+      <h3 class="page-title white-text teal">Contact</h3>
+      <div class="container">
+        <div class="card">
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12 center-align">
+                <h4 class="brown-text text-darken-2">Get In Touch</h4>
+                <p class="flow-text">
+                  I'm always interested in new opportunities and exciting projects. 
+                  Whether you have a question or just want to say hi, feel free to reach out!
+                </p>
+              </div>
+            </div>
+            
+            <div class="row center-align" style="margin-top: 30px;">
+              <div class="col s12 m6">
+                <div class="contact-item">
+                  <i class="fa fa-envelope" style="font-size: 3rem; color: #00796b; margin-bottom: 15px;"></i>
+                  <h5>Email</h5>
+                  <p><a href="mailto:pirangi.sukanya18@gmail.com" class="teal-text">pirangi.sukanya18@gmail.com</a></p>
+                </div>
+              </div>
+              <div class="col s12 m6">
+                <div class="contact-item">
+                  <i class="fa fa-linkedin" style="font-size: 3rem; color: #00796b; margin-bottom: 15px;"></i>
+                  <h5>LinkedIn</h5>
+                  <p><a href="https://linkedin.com/in/pirangi-sukanya" target="_blank" class="teal-text">linkedin.com/in/pirangi-sukanya</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row center-align" style="margin-top: 30px;">
+              <div class="col s12">
+                <div class="social">
+                  <a href="mailto:pirangi.sukanya@gmail.com">
+                    <button class="icon-btn" style="background: #d44638;">
+                      <i class="fa fa-envelope"></i>
+                    </button>
+                  </a>
+                  <a href="https://linkedin.com/in/pirangi-sukanya" target="_blank">
+                    <button class="icon-btn linkedin">
+                      <i class="fa fa-linkedin"></i>
+                    </button>
+                  </a>
+                  <a href="https://github.com/pirangisukanya" target="_blank">
+                    <button class="icon-btn github">
+                      <i class="fa fa-github"></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- Materialize - Compiled and minified JavaScript-->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+
+  <script>
+    // Initialize mobile navigation
+    $(".button-collapse").sideNav();
+
+    // Typing animation
+    const typed = ['Software Developer', 'Web Developer', 'ML Enthusiast', 'Problem Solver'];
+    let typeIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typeSpeed = 100;
+    const deleteSpeed = 50;
+    const pauseTime = 2000;
+
+    function type() {
+      const current = typed[typeIndex];
+      const typingElement = document.querySelector('.typing');
+      
+      if (!typingElement) return;
+
+      if (isDeleting) {
+        typingElement.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingElement.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let typeSpeedCurrent = isDeleting ? deleteSpeed : typeSpeed;
+
+      if (!isDeleting && charIndex === current.length) {
+        typeSpeedCurrent = pauseTime;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        typeIndex = (typeIndex + 1) % typed.length;
+      }
+
+      setTimeout(type, typeSpeedCurrent);
+    }
+
+    // Start typing animation when page loads
+    $(document).ready(function() {
+      setTimeout(type, 1000);
+      
+      // Smooth scrolling for navigation links
+      $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+          event.preventDefault();
+          $('html, body').stop().animate({
+            scrollTop: target.offset().top - 70
+          }, 1000);
+        }
+      });
+    });
+
+    // Add active class to current section in navigation
+    $(window).scroll(function() {
+      var scrollDistance = $(window).scrollTop();
+      
+      $('.section').each(function(i) {
+        if ($(this).position().top <= scrollDistance + 100) {
+          $('.side-nav a.active').removeClass('active');
+          $('.side-nav a').eq(i + 1).addClass('active');
+        }
+      });
+    }).scroll();
+  </script>
+</body>
+
+</html>
